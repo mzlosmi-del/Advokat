@@ -1,3 +1,5 @@
-[build]
-  publish = "."
-  command = ""
+name = "advokat-olivera-kantar"
+compatibility_date = "2026-04-01"
+
+[assets]
+directory = "."
