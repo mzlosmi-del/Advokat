@@ -76,8 +76,8 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 .container{max-width:1120px;margin:0 auto;padding:0 28px}
@@ -158,9 +158,10 @@ img{display:block;max-width:100%}
 }
 .nav__ham span{display:block;width:22px;height:1.5px;background:var(--navy);transition:.3s}
 .mob-menu{
-  display:none;position:fixed;inset:0;top:calc(68px + 33px);
+  display:none;position:fixed;top:calc(68px + 33px);left:0;right:0;bottom:0;
   background:var(--paper);z-index:99;
   padding:32px 28px;flex-direction:column;gap:0;overflow-y:auto;
+  overflow-x:hidden;width:100%;max-width:100vw;box-sizing:border-box;
 }
 .mob-menu.open{display:flex}
 .mob-menu a{
@@ -664,14 +665,14 @@ span[data-lang].active{display:inline}
         <li><a href="#o-meni">O meni</a></li>
         <li><a href="#usluge">Usluge</a></li>
         <li><a href="#proces">Proces</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#faq">Pitanja</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
       <ul class="nav__links" data-lang="cyr" role="list">
         <li><a href="#o-meni">О мени</a></li>
         <li><a href="#usluge">Услуге</a></li>
         <li><a href="#proces">Процес</a></li>
-        <li><a href="#faq">ФАК</a></li>
+        <li><a href="#faq">ЧПП</a></li>
         <li><a href="#kontakt">Контакт</a></li>
       </ul>
       <ul class="nav__links" data-lang="en" role="list">
@@ -711,7 +712,11 @@ span[data-lang].active{display:inline}
     <span data-lang="cyr">Процес</span>
     <span data-lang="en">Process</span>
   </a>
-  <a href="#faq" class="mob-lnk">FAQ</a>
+  <a href="#faq" class="mob-lnk">
+    <span data-lang="lat" class="active">Pitanja</span>
+    <span data-lang="cyr">ЧПП</span>
+    <span data-lang="en">FAQ</span>
+  </a>
   <a href="#kontakt" class="mob-lnk">
     <span data-lang="lat" class="active">Kontakt</span>
     <span data-lang="cyr">Контакт</span>
@@ -1043,7 +1048,7 @@ span[data-lang].active{display:inline}
   <div class="container--sm">
 
     <div data-lang="lat" class="active">
-      <p class="eyebrow reveal">Česta pitanja</p>
+      <p class="eyebrow reveal">Često postavljana pitanja</p>
       <h2 class="section__title reveal">Sve što vas zanima</h2>
       <div class="faq__list reveal">
         <div class="faq__item"><button class="faq__btn" aria-expanded="false">Da li je prva konsultacija besplatna?<svg viewBox="0 0 18 18" fill="none"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button><div class="faq__body"><p>Da, inicijalne konsultacije su potpuno besplatne i bez obaveze. Na prvom sastanku analiziramo vaš slučaj i zajedno razmatramo mogućnosti.</p></div></div>
@@ -1055,7 +1060,7 @@ span[data-lang].active{display:inline}
     </div>
 
     <div data-lang="cyr">
-      <p class="eyebrow reveal">Честа питања</p>
+      <p class="eyebrow reveal">Често постављана питања</p>
       <h2 class="section__title reveal">Све што вас занима</h2>
       <div class="faq__list reveal">
         <div class="faq__item"><button class="faq__btn" aria-expanded="false">Да ли је прва консултација бесплатна?<svg viewBox="0 0 18 18" fill="none"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button><div class="faq__body"><p>Да, иницијалне консултације су потпуно бесплатне и без обавезе. На првом састанку анализирамо ваш случај и заједно разматрамо могућности.</p></div></div>
@@ -1226,7 +1231,7 @@ span[data-lang].active{display:inline}
 
     <div class="footer__grid" data-lang="cyr">
       <div><span class="footer__logo">Адвокат Оливера Кантар</span><p class="footer__about">Адвокатска канцеларија у Кикинди са вишегодишњим искуством у кривичном, породичном и привредном праву.</p><address class="footer__addr">Жарка Зрењанина 52, 23300 Кикинда<br><a href="tel:+381XXXXXXXX">+381 XX XXX-XXX</a></address></div>
-      <div><p class="fh">Странице</p><ul class="fl"><li><a href="#o-meni">О мени</a></li><li><a href="#usluge">Услуге</a></li><li><a href="#proces">Процес</a></li><li><a href="#faq">ФАК</a></li><li><a href="#kontakt">Контакт</a></li></ul></div>
+      <div><p class="fh">Странице</p><ul class="fl"><li><a href="#o-meni">О мени</a></li><li><a href="#usluge">Услуге</a></li><li><a href="#proces">Процес</a></li><li><a href="#faq">ЧПП</a></li><li><a href="#kontakt">Контакт</a></li></ul></div>
       <div><p class="fh">Области</p><ul class="fl"><li><a href="#usluge">Кривично право</a></li><li><a href="#usluge">Породично право</a></li><li><a href="#usluge">Привредно право</a></li><li><a href="#usluge">Имовинско право</a></li><li><a href="#usluge">Радно право</a></li></ul></div>
       <div><p class="fh">Радно време</p><ul class="fl" style="font-size:.82rem"><li>Пон–Пет: по договору</li><li>Субота: по договору</li></ul></div>
     </div>
