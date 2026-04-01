@@ -187,7 +187,7 @@ img{display:block;max-width:100%}
   position:relative;z-index:1;
 }
 .hero__right{
-  height:100%;min-height:600px;
+  height:100%;min-height:420px;max-width:360px;
   position:relative;overflow:hidden;
   background:var(--navy-mid);
 }
@@ -197,7 +197,7 @@ img{display:block;max-width:100%}
   flex-direction:column;gap:12px;
   color:rgba(192,155,58,.2);
 }
-.hero__right-img svg{width:88px;height:88px}
+.hero__right-img svg{width:52px;height:52px}
 .hero__right-img span{font-family:var(--serif);font-size:.875rem;color:rgba(255,255,255,.2);letter-spacing:.1em}
 .hero__right::after{
   content:'';position:absolute;inset:0;left:-1px;
@@ -300,12 +300,12 @@ img{display:block;max-width:100%}
 }
 .about__img-wrap{position:relative}
 .about__img{
-  width:100%;aspect-ratio:3/4;
+  width:100%;aspect-ratio:4/5;max-height:380px;
   background:var(--paper-low);border:1px solid var(--border-md);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:10px;color:rgba(192,155,58,.25);
 }
-.about__img svg{width:68px;height:68px}
+.about__img svg{width:44px;height:44px}
 .about__img span{font-family:var(--serif);font-size:.8rem;color:rgba(0,0,0,.25);letter-spacing:.1em}
 .about__pull{
   position:absolute;bottom:-24px;right:-28px;
@@ -661,7 +661,7 @@ span[data-lang].active{display:inline}
         <span data-lang="en">Lawyer Kantar</span>
       </a>
 
-      <ul class="nav__links" data-lang="lat" role="list">
+      <ul class="nav__links active" data-lang="lat" role="list">
         <li><a href="#o-meni">O meni</a></li>
         <li><a href="#usluge">Usluge</a></li>
         <li><a href="#proces">Proces</a></li>
@@ -797,7 +797,7 @@ span[data-lang].active{display:inline}
 <!-- TRUST BAR -->
 <div class="trust" role="complementary">
 
-  <div class="trust__inner" data-lang="lat">
+  <div class="trust__inner active" data-lang="lat">
     <div class="trust__item"><div class="trust__dot"><svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1l1.5 3 3.3.5-2.4 2.3.6 3.3-3-1.6-3 1.6.6-3.3L1.7 4.5 5 4z" fill="#C09B3A"/></svg></div>Advokatska komora Vojvodine</div>
     <div class="trust__item"><div class="trust__dot"><svg viewBox="0 0 13 13" fill="none"><rect x="1" y="2.5" width="11" height="8" rx="1" stroke="#C09B3A" stroke-width="1.1"/><path d="M1 5h11" stroke="#C09B3A" stroke-width="1.1"/></svg></div>Licencirani advokat</div>
     <div class="trust__item"><div class="trust__dot"><svg viewBox="0 0 13 13" fill="none"><path d="M6.5 1L2 3.8v4c0 3 2.2 5.8 4.5 6.5C9.3 13.6 11 10.8 11 7.8v-4L6.5 1z" stroke="#C09B3A" stroke-width="1.1"/></svg></div>Advokatska komora Srbije</div>
@@ -1091,7 +1091,7 @@ span[data-lang].active{display:inline}
   <div class="cta-strip__bg" aria-hidden="true"></div>
   <div class="container">
 
-    <div class="cta-strip__inner" data-lang="lat">
+    <div class="cta-strip__inner active" data-lang="lat">
       <div class="reveal">
         <h2 class="cta-strip__title">Imate pravni problem?<br><em>Razgovarajmo danas.</em></h2>
         <p class="cta-strip__sub">Besplatne inicijalne konsultacije. Diskretno. Bez obaveze.</p>
@@ -1222,7 +1222,7 @@ span[data-lang].active{display:inline}
 <footer class="footer">
   <div class="container">
 
-    <div class="footer__grid" data-lang="lat">
+    <div class="footer__grid active" data-lang="lat">
       <div><span class="footer__logo">Advokat Olivera Kantar</span><p class="footer__about">Advokatska kancelarija u Kikindi sa višegodišnjim iskustvom u krivičnom, porodičnom i privrednom pravu.</p><address class="footer__addr">Žarka Zrenjanina 52, 23300 Kikinda<br><a href="tel:+381XXXXXXXX">+381 XX XXX-XXX</a></address></div>
       <div><p class="fh">Stranice</p><ul class="fl"><li><a href="#o-meni">O meni</a></li><li><a href="#usluge">Usluge</a></li><li><a href="#proces">Proces</a></li><li><a href="#faq">FAQ</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
       <div><p class="fh">Oblasti</p><ul class="fl"><li><a href="#usluge">Krivično pravo</a></li><li><a href="#usluge">Porodično pravo</a></li><li><a href="#usluge">Privredno pravo</a></li><li><a href="#usluge">Imovinsko pravo</a></li><li><a href="#usluge">Radno pravo</a></li></ul></div>
