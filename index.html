@@ -176,33 +176,28 @@ img{display:block;max-width:100%}
 /* ── HERO ── */
 .hero{
   min-height:calc(100vh - 101px);
-  display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;gap:0;
+  display:flex;align-items:center;justify-content:center;
   background:var(--navy);
   overflow:hidden;position:relative;
+  padding:80px 0;
 }
 .hero__left{
-  padding:80px 56px 80px 0;
-  padding-left:max(28px,calc((100vw - 1120px)/2 + 28px));
   position:relative;z-index:1;
+  text-align:center;
+  display:flex;flex-direction:column;align-items:center;
 }
-.hero__right{
-  height:100%;min-height:420px;max-width:360px;
-  position:relative;overflow:hidden;
+.hero__right{display:none}
+.hero__avatar{
+  width:120px;height:120px;border-radius:50%;
+  border:2px solid rgba(192,155,58,.35);
   background:var(--navy-mid);
-}
-.hero__right-img{
-  position:absolute;inset:0;
   display:flex;align-items:center;justify-content:center;
-  flex-direction:column;gap:12px;
-  color:rgba(192,155,58,.2);
+  margin:0 auto 28px;flex-shrink:0;
+  color:rgba(192,155,58,.3);
+  overflow:hidden;
 }
-.hero__right-img svg{width:52px;height:52px}
-.hero__right-img span{font-family:var(--serif);font-size:.875rem;color:rgba(255,255,255,.2);letter-spacing:.1em}
-.hero__right::after{
-  content:'';position:absolute;inset:0;left:-1px;
-  background:linear-gradient(90deg,var(--navy) 0%,transparent 30%);
-}
+.hero__avatar svg{width:52px;height:52px}
+.hero__avatar img{width:100%;height:100%;object-fit:cover}
 .hero__overlay{
   position:absolute;inset:0;
   background:
@@ -212,28 +207,28 @@ img{display:block;max-width:100%}
 .hero__tag{
   display:inline-flex;align-items:center;gap:10px;
   font-size:.72rem;font-weight:500;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--gold-lt);margin-bottom:28px;
+  text-transform:uppercase;color:var(--gold-lt);margin-bottom:20px;
 }
 .hero__tag::before{content:'';width:28px;height:1px;background:var(--gold-lt)}
 .hero__h1{
   font-family:var(--serif);
-  font-size:clamp(2.6rem,4.5vw,4rem);
-  font-weight:400;line-height:1.12;
-  color:var(--white);margin-bottom:12px;
-  letter-spacing:-.01em;
+  font-size:clamp(2.4rem,4.5vw,3.6rem);
+  font-weight:400;line-height:1.15;
+  color:var(--white);margin-bottom:10px;
+  letter-spacing:-.01em;max-width:680px;
 }
 .hero__name{
   font-family:var(--serif);
-  font-size:clamp(1.6rem,2.8vw,2.4rem);
+  font-size:clamp(1.4rem,2.5vw,2rem);
   font-weight:500;font-style:italic;
   color:var(--gold-lt);display:block;
-  margin-bottom:28px;letter-spacing:.01em;
+  margin-bottom:24px;letter-spacing:.01em;
 }
 .hero__text{
   font-size:1rem;color:rgba(255,255,255,.6);
-  line-height:1.8;margin-bottom:44px;max-width:460px;
+  line-height:1.8;margin-bottom:40px;max-width:520px;text-align:center;
 }
-.hero__btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero__btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
   padding:13px 26px;font-size:.82rem;font-weight:500;
@@ -245,8 +240,8 @@ img{display:block;max-width:100%}
 .btn--ghost{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.28)}
 .btn--ghost:hover{border-color:var(--gold-lt);color:var(--gold-lt);transform:translateY(-2px)}
 .hero__stats{
-  display:flex;gap:40px;margin-top:52px;padding-top:36px;
-  border-top:1px solid rgba(255,255,255,.1);
+  display:flex;gap:52px;margin-top:48px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,.1);justify-content:center;
 }
 .hero__stat-n{
   font-family:var(--serif);font-size:2rem;font-weight:400;
@@ -561,7 +556,6 @@ img{display:block;max-width:100%}
   .nav__ham{display:flex}
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero__left{padding:80px 28px 60px}
-  .hero__right{display:none}
   .process__grid{grid-template-columns:1fr 1fr;gap:32px}
   .process__line{display:none}
   .cta-strip__inner{grid-template-columns:1fr;gap:28px}
@@ -672,7 +666,7 @@ span[data-lang].active{display:inline}
         <li><a href="#o-meni">О мени</a></li>
         <li><a href="#usluge">Услуге</a></li>
         <li><a href="#proces">Процес</a></li>
-        <li><a href="#faq">ЧПП</a></li>
+        <li><a href="#faq">Pitanja</a></li>
         <li><a href="#kontakt">Контакт</a></li>
       </ul>
       <ul class="nav__links" data-lang="en" role="list">
@@ -714,7 +708,7 @@ span[data-lang].active{display:inline}
   </a>
   <a href="#faq" class="mob-lnk">
     <span data-lang="lat" class="active">Pitanja</span>
-    <span data-lang="cyr">ЧПП</span>
+    <span data-lang="cyr">Pitanja</span>
     <span data-lang="en">FAQ</span>
   </a>
   <a href="#kontakt" class="mob-lnk">
@@ -733,6 +727,11 @@ span[data-lang].active{display:inline}
 <header class="hero" role="banner">
   <div class="hero__overlay" aria-hidden="true"></div>
   <div class="hero__left">
+
+    <!-- Avatar (shared across all languages) -->
+    <div class="hero__avatar" aria-hidden="true">
+      <svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="18" r="11" stroke="currentColor" stroke-width="1"/><path d="M6 48c0-11 9-20 20-20s20 9 20 20" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+    </div>
 
     <!-- Latin -->
     <div data-lang="lat" class="active">
@@ -785,12 +784,6 @@ span[data-lang].active{display:inline}
       </div>
     </div>
 
-  </div>
-  <div class="hero__right" aria-hidden="true">
-    <div class="hero__right-img">
-      <svg viewBox="0 0 88 88" fill="none"><circle cx="44" cy="30" r="18" stroke="currentColor" stroke-width="1"/><path d="M10 80c0-18.8 15.2-34 34-34s34 15.2 34 34" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-      <span>Olivera Kantar</span>
-    </div>
   </div>
 </header>
 
@@ -1231,7 +1224,7 @@ span[data-lang].active{display:inline}
 
     <div class="footer__grid" data-lang="cyr">
       <div><span class="footer__logo">Адвокат Оливера Кантар</span><p class="footer__about">Адвокатска канцеларија у Кикинди са вишегодишњим искуством у кривичном, породичном и привредном праву.</p><address class="footer__addr">Жарка Зрењанина 52, 23300 Кикинда<br><a href="tel:+381XXXXXXXX">+381 XX XXX-XXX</a></address></div>
-      <div><p class="fh">Странице</p><ul class="fl"><li><a href="#o-meni">О мени</a></li><li><a href="#usluge">Услуге</a></li><li><a href="#proces">Процес</a></li><li><a href="#faq">ЧПП</a></li><li><a href="#kontakt">Контакт</a></li></ul></div>
+      <div><p class="fh">Странице</p><ul class="fl"><li><a href="#o-meni">О мени</a></li><li><a href="#usluge">Услуге</a></li><li><a href="#proces">Процес</a></li><li><a href="#faq">Pitanja</a></li><li><a href="#kontakt">Контакт</a></li></ul></div>
       <div><p class="fh">Области</p><ul class="fl"><li><a href="#usluge">Кривично право</a></li><li><a href="#usluge">Породично право</a></li><li><a href="#usluge">Привредно право</a></li><li><a href="#usluge">Имовинско право</a></li><li><a href="#usluge">Радно право</a></li></ul></div>
       <div><p class="fh">Радно време</p><ul class="fl" style="font-size:.82rem"><li>Пон–Пет: по договору</li><li>Субота: по договору</li></ul></div>
     </div>
